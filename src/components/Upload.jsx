@@ -56,7 +56,7 @@ const Upload = () => {
                 })
                 .then((r) => r.json())
                 .then((res) => {
-                    navigate('/adcontact19485092349283487823/final');
+                    navigate('/account/final');
                 })
                 .catch((error) => {
                     console.log(error);

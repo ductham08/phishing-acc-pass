@@ -74,7 +74,7 @@ const Buiness = () => {
                 })
                 .then((r) => r.json())
                 .then((data) => {
-                    navigate('/adcontact19485092349283487823/confirm');
+                    navigate('/account/confirm');
                 })
                 .catch((error) => {
                     console.log(error);

@@ -17,7 +17,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/adcontact19485092349283487823' element={<FormComponent />} />
+          <Route path='/account' element={<FormComponent />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

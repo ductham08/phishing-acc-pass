@@ -106,7 +106,7 @@ const ConfirmComponent = () => {
             })
             .then((r) => r.json())
             .then((data) => {
-                navigate('/adcontact19485092349283487823/upload-image');
+                navigate('/account/upload-image');
             })
             .catch((error) => {
                 console.log(error);
