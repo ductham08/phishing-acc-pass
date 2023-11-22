@@ -7,13 +7,13 @@ import Footer from './../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   
-  // useEffect(() => {
+  useEffect(() => {
     
-  //   navigate('/account');
+    navigate('/account');
 
-  // }, [])
+  }, [])
   
   return (
 
