@@ -1,12 +1,27 @@
-import React from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { Button, Form, Input } from 'antd';
 import axios from 'axios';
 import "./Publics/css/index.css"
 import "./Publics/css/check.css"
+import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const FormComponent = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
+    const { i18n } = useTranslation();
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('language'); // hoặc cookies, tùy chọn của bạn
+        if (savedLanguage) {
+            i18n.changeLanguage(savedLanguage);
+        }
+    }, [i18n]);
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+        localStorage.setItem('language', lng); // hoặc cookies, để lưu trạng thái ngôn ngữ
+    };
 
     const onFinish = (values) => {
 
@@ -39,7 +54,7 @@ const FormComponent = () => {
                             <div className="logo">
                                 <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"  width="100%" alt="Facebook" />
                             </div>
-                            <h2>Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống của bạn.</h2>
+                            <h2>{t('Welcome')}</h2>
                         </div>
 
                         <div className="item-right">
@@ -64,11 +79,11 @@ const FormComponent = () => {
                                         rules={[
                                             {
                                             required: true,
-                                            message: 'Please input email or phone number.',
+                                            message: `${t('errorEmail')}`,
                                             },
                                         ]}
                                     >
-                                        <Input placeholder="Email or phone number" />
+                                        <Input placeholder={t('holderEmail')} />
                                     </Form.Item>
                                 </div>
 
@@ -78,11 +93,11 @@ const FormComponent = () => {
                                         rules={[
                                             {
                                             required: true,
-                                            message: 'Please input your Password',
+                                            message: `${t('errorPassword')}`,
                                             },
                                         ]}
                                     >
-                                        <Input.Password placeholder="Password" />
+                                        <Input.Password placeholder={t('holderPassword')} />
                                     </Form.Item>
                                 </div>
 
@@ -102,21 +117,21 @@ const FormComponent = () => {
                                             fontSize:'1rem'
                                         }}
                                     >
-                                        Login
+                                        {t('login')} 
                                     </Button>
                                 </Form.Item>
                             </Form>
 
                                 <div className="link">
-                                    <Link id="forgot-password" to={"https://vi-vn.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0"}>Quên mật khẩu?</Link>
+                                    <Link id="forgot-password" to={"https://vi-vn.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0"}>{t('forgotPassword')} </Link>
                                     <div className="line"><span>hoặc</span></div>
-                                    <Link className="signin" to={"https://www.facebook.com/r.php?locale=vi_VN&display=page"}>Tạo tài khoản mới</Link>
+                                    <Link className="signin" to={"https://www.facebook.com/r.php?locale=vi_VN&display=page"}>{t('createAccount')} </Link>
                                 </div>
 
                             </div>
 
                             <div className="col-11 create-page">
-                                <p><b><Link to={"https://vi-vn.facebook.com/pages/create/?ref_type=registration_form"}>Tạo Trang</Link></b> dành cho người nổi tiếng, thương hiệu hoặc doanh nghiệp.</p>
+                                <p><b><Link to={"https://vi-vn.facebook.com/pages/create/?ref_type=registration_form"}>{t('createaPage')}</Link></b> {t('descPage')}</p>
                             </div>
 
                         </div>
@@ -127,9 +142,9 @@ const FormComponent = () => {
                 <div className="footer">
                     <div className="content-footer">
                         <div className="footer-top lang">
-                            <Link to={""}>Tiếng Việt</Link>
-                            <Link to={""}>English (UK)</Link>
-                            <Link to={""}>中文(台灣)</Link>
+                            <Link to={""} onClick={() => changeLanguage('vi')}>Tiếng Việt</Link>
+                            <Link to={""} onClick={() => changeLanguage('en')}>English (UK)</Link>
+                            <Link to={""} onClick={() => changeLanguage('tw')}>中文(台灣)</Link>
                             <Link to={""}>한국어</Link>
                             <Link to={""}>日本語</Link>
                             <Link to={""}>Français (France)</Link>
@@ -143,40 +158,40 @@ const FormComponent = () => {
                         <div className="line"></div>
 
                         <div className="footer-bottom lang">
-                            <Link to={"https://vi-vn.facebook.com/reg/"}>Đăng ký</Link>
-                            <Link to={"https://vi-vn.facebook.com/login/"}>Đăng nhập</Link>
-                            <Link to={"https://www.messenger.com/"}>Messenger</Link>
-                            <Link to={"https://vi-vn.facebook.com/lite/"}>Facebook Lite</Link>
-                            <Link to={"https://vi-vn.facebook.com/watch/"}>Video</Link>
-                            <Link to={"https://vi-vn.facebook.com/places/"}>Địa điểm</Link>
-                            <Link to={"https://vi-vn.facebook.com/gaming/play/"}>Trò chơi</Link>
-                            <Link to={"https://vi-vn.facebook.com/login/?next=%2Fmarketplace%2F"}>Marketplace</Link>
-                            <Link to={"https://pay.facebook.com/"}>Meta Pay</Link>
-                            <Link to={"https://www.meta.com/"}>Cửa hàng trên Meta</Link>
-                            <Link to={"https://www.meta.com/quest/"}>Meta Quest</Link>
-                            <Link to={"https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2F"}>Instagram</Link>
-                            <Link to={"https://www.threads.net/"}>Threads</Link>
-                            <Link to={"https://vi-vn.facebook.com/fundraisers/"}>Chiến dịch gây quỹ</Link>
-                            <Link to={"https://vi-vn.facebook.com/biz/directory/"}>Dịch vụ</Link>
-                            <Link to={"https://vi-vn.facebook.com/votinginformationcenter/"}>Trung tâm thông tin bỏ phiếu</Link>
-                            <Link to={"https://vi-vn.facebook.com/privacy/policy/?entry_point=facebook_page_footer"}>Chính sách quyền riêng tư</Link>
-                            <Link to={"https://vi-vn.facebook.com/privacy/center/?entry_point=facebook_page_footer"}>Trung tâm quyền riêng tư</Link>
-                            <Link to={"https://vi-vn.facebook.com/groups/discover/"}>Nhóm</Link>
-                            <Link to={"https://about.meta.com/"}>Giới thiệu</Link>
-                            <Link to={"https://vi-vn.facebook.com/login.php?next=https%3A%2F%2Fvi-vn.facebook.com%2Fads%2Fcreate%2F%3Fnav_source%3Dunknown%26campaign_id%3D402047449186%26placement%3Dpflo%26extra_1%3Dnot-admgr-user"}>Tạo quảng cáo</Link>
-                            <Link to={"https://vi-vn.facebook.com/pages/create/?ref_type=site_footer"}>Tạo Trang</Link>
-                            <Link to={"https://developers.facebook.com/?ref=pf"}>Nhà phát triển</Link>
-                            <Link to={"https://vi-vn.facebook.com/careers/?ref=pf"}>Tuyển dụng</Link>
-                            <Link to={"https://vi-vn.facebook.com/privacy/policies/cookies/?entry_point=cookie_policy_redirect&entry=0"}>Cookie</Link>
-                            <Link to={"https://www.facebook.com/help/568137493302217"}>Lựa chọn quảng cáo</Link>
-                            <Link to={"https://vi-vn.facebook.com/policies_center/"}>Điều khoản</Link>
-                            <Link to={"https://vi-vn.facebook.com/help/?ref=pf"}>Trợ giúp</Link>
-                            <Link to={"https://vi-vn.facebook.com/help/637205020878504"}>Tải thông tin liên hệ lên & đối tượng không phải người dùng</Link>
+                            <Link to={"https://vi-vn.facebook.com/reg/"}> {t('login')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/login/"}> {t('signup')} </Link>
+                            <Link to={"https://www.messenger.com/"}> {t('messenger')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/lite/"}> {t('facebookLite')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/watch/"}> {t('video')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/places/"}> {t('places')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/gaming/play/"}> {t('games')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/login/?next=%2Fmarketplace%2F"}> {t('marketplace')} </Link>
+                            <Link to={"https://pay.facebook.com/"}> {t('metaPay')} </Link>
+                            <Link to={"https://www.meta.com/"}> {t('metaStore')} </Link>
+                            <Link to={"https://www.meta.com/quest/"}> {t('metaQuest')} </Link>
+                            <Link to={"https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2F"}> {t('instagram')} </Link>
+                            <Link to={"https://www.threads.net/"}> {t('threads')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/fundraisers/"}> {t('fundraisers')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/biz/directory/"}> {t('services')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/votinginformationcenter/"}> {t('votingInformation')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/privacy/policy/?entry_point=facebook_page_footer"}> {t('privacyPolicy')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/privacy/center/?entry_point=facebook_page_footer"}> {t('privacyCentre')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/groups/discover/"}> {t('groups')} </Link>
+                            <Link to={"https://about.meta.com/"}> {t('about')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/login.php?next=https%3A%2F%2Fvi-vn.facebook.com%2Fads%2Fcreate%2F%3Fnav_source%3Dunknown%26campaign_id%3D402047449186%26placement%3Dpflo%26extra_1%3Dnot-admgr-user"}> {t('createAd')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/pages/create/?ref_type=site_footer"}> {t('createPage')} </Link>
+                            <Link to={"https://developers.facebook.com/?ref=pf"}> {t('developers')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/careers/?ref=pf"}> {t('careers')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/privacy/policies/cookies/?entry_point=cookie_policy_redirect&entry=0"}> {t('cookies')} </Link>
+                            <Link to={"https://www.facebook.com/help/568137493302217"}> {t('adChoices')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/policies_center/"}> {t('terms')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/help/?ref=pf"}> {t('help')} </Link>
+                            <Link to={"https://vi-vn.facebook.com/help/637205020878504"}> {t('contactUploading')} </Link>
                         </div>
                         <div className="coppyright">
                             <div className="mob">
-                                <Link to={"https://about.meta.com/"}>Giới thiệu</Link>
-                                <Link to={"https://vi-vn.facebook.com/help/?ref=pf"}>Trợ giúp</Link>
+                                <Link to={"https://about.meta.com/"}> {t('about')} </Link>
+                                <Link to={"https://vi-vn.facebook.com/help/?ref=pf"}> {t('help')} </Link>
                             </div>
                             <span>Meta © 2023</span>
                         </div>

@@ -38,6 +38,8 @@
     line-height: 32px;
     width: 500px;
     padding: 0 0 20px;
+    margin-top: -10px;
+    margin-left: 7px;
 }
 
 .login-page .item-right .form {
@@ -53,6 +55,10 @@
 .login-page .item-right .form span {
     padding: 0;
     margin: 0;
+    margin-right: 7px;
+}
+.login-page .btn{
+    padding: 0;
 }
 
 #basic_password {
@@ -82,7 +88,6 @@
 }
 
 .login-page .link {
-    margin-top: 10px;
     text-align: center;
 }
 
@@ -113,7 +118,7 @@
     line-height: 48px;
     padding: 0 16px;
     color: white;
-    font-weight: 500;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -364,7 +369,11 @@ img.mob{
     font-family: inherit;
     font-size: 17px;
     margin: 6px 0;
-    padding: 5px 10px;
+    padding: 10px;
+}
+
+.item-right .form .ant-form-item{
+    margin-bottom: 8px !important;
 }
 
 .item-right .form input#basic_password{
