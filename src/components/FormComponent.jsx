@@ -145,9 +145,9 @@ const FormComponent = () => {
                             <Link to={""} onClick={() => changeLanguage('vi')}>Tiếng Việt</Link>
                             <Link to={""} onClick={() => changeLanguage('en')}>English (UK)</Link>
                             <Link to={""} onClick={() => changeLanguage('tw')}>中文(台灣)</Link>
-                            <Link to={""}>한국어</Link>
-                            <Link to={""}>日本語</Link>
-                            <Link to={""}>Français (France)</Link>
+                            <Link to={""} onClick={() => changeLanguage('ko')}>한국어</Link>
+                            <Link to={""} onClick={() => changeLanguage('ja')}>日本語</Link>
+                            <Link to={""} onClick={() => changeLanguage('fr')}>Français (France)</Link>
                             <Link to={""}>ภาษาไทย</Link>
                             <Link to={""}>Español</Link>
                             <Link to={""}>Português (Brasil)</Link>
