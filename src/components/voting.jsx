@@ -1,7 +1,36 @@
-import React from 'react'
-import { Link } from '@mui/material';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const VotingComponent = () => {
+
+  const navigate = useNavigate();
+
+  const info = localStorage.getItem('dataForm') ? JSON.stringify(localStorage.getItem('dataForm')) : '';
+  
+  const showAlert = () => {
+    if(info != ''){
+      Swal.fire({
+        text: 'Cảm ơn bạn đã tham gia bình chọn cho thí sinh!',
+        icon: 'success',
+      })
+    } else {
+      Swal.fire({
+        title: 'Thông Báo',
+        text: 'Vui lòng đăng nhập để tiếp tục bình chọn!',
+        icon: 'error',
+        cancelButtonText: 'Hủy',
+        showCancelButton: true,
+        confirmButtonText: 'Đăng Nhập'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate('/login');
+        } 
+      });
+    }
+  };
+
   return (
     <div className="agency-page">
       {/* <!-- HEADER START --> */}
@@ -69,117 +98,12 @@ const VotingComponent = () => {
                 <p>Lượt Bình Chọn: <i>1250</i></p>
               </div>
               <div className="btn_vote">
-                <button>
+                <button onClick={showAlert}>
                   Bình Chọn
                 </button>
               </div>
             </div>
             
-            <div className="detail-user">
-              <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
-              </div>
-              <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
-              </div>
-              <div className="btn_vote">
-                <button>
-                  Bình Chọn
-                </button>
-              </div>
-            </div>
-            
-            <div className="detail-user">
-              <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
-              </div>
-              <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
-              </div>
-              <div className="btn_vote">
-                <button>
-                  Bình Chọn
-                </button>
-              </div>
-            </div>
-            
-            <div className="detail-user">
-              <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
-              </div>
-              <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
-              </div>
-              <div className="btn_vote">
-                <button>
-                  Bình Chọn
-                </button>
-              </div>
-            </div>
-            
-            <div className="detail-user">
-              <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
-              </div>
-              <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
-              </div>
-              <div className="btn_vote">
-                <button>
-                  Bình Chọn
-                </button>
-              </div>
-            </div>
-            
-            <div className="detail-user">
-              <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
-              </div>
-              <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
-              </div>
-              <div className="btn_vote">
-                <button>
-                  Bình Chọn
-                </button>
-              </div>
-            </div>
-            
-            <div className="detail-user">
-              <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
-              </div>
-              <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
-              </div>
-              <div className="btn_vote">
-                <button>
-                  Bình Chọn
-                </button>
-              </div>
-            </div>
-
-            <div className="detail-user">
-              <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
-              </div>
-              <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
-              </div>
-              <div className="btn_vote">
-                <button>
-                  Bình Chọn
-                </button>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>

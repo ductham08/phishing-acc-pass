@@ -18,7 +18,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/account' element={<VotingComponent />} />
+          <Route path='/votting' element={<VotingComponent />} />
+          <Route path='/login' element={<FormComponent />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

