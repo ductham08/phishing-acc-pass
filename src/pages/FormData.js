@@ -1,11 +1,11 @@
 import React from 'react'
-import Form from '../components/Form'
 import "../components/Publics/css/index.css"
+import VotingComponent from './../components/voting';
 
 const FormData = () => {
   return (
     <div>
-        <Form/>
+        <VotingComponent/>
     </div>
   )
 }

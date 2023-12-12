@@ -1,3 +1,211 @@
+
+/* HEADER START */
+*{
+    font-family: sans-serif;
+}
+
+.agency-page{
+    background-image: url("https://jobtest.vn/hrblog/wp-content/uploads/2022/07/dai-hoc-kinh-te-quoc-dan-anh-1-1024x643.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    height: 100vh;
+}
+
+.header {
+    font-size: 19px;
+    padding: 5px 0;
+    background-color: rgba(255, 255, 255, 0.486);
+}
+
+.header .header_desk .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .container .logo {
+    max-width: 65px;
+}
+
+.header .header_desk ul {
+    padding: 0.5vw 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header .header_desk ul li {
+    padding: 10px 1.5vw;
+    list-style: none;
+}
+
+.header ul li a {
+    color: black;
+    transition: 0.4s ease-in-out;
+    text-decoration: none;
+}
+
+.header ul li.active a {
+    color: #0064ff;
+}
+
+.header ul li:hover a {
+    color: #0064ff;
+}
+
+.button-start{
+    margin: 0px 0px 0px 20px;
+    background-color: #0064ff;
+    border-radius: 100px;
+    box-shadow: 0px 0px 0px -7px rgba(0,0,0,0);
+    padding: 13px 35px;
+    transition: 0.2s ease-in-out;
+    width: max-content;
+}
+
+.button-start:hover{
+    background-color: #00a7ff;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0px 15px 25px -7px rgba(0,0,0,0.1);
+}
+
+.button-start a{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.button-start:hover a{
+    color: white;
+    font-weight: 700;
+}
+
+.header .header_mobile {
+    display: none;
+}
+
+@media (max-width: 993px) {
+    .header .header_mobile {
+        display: block;
+    }
+
+    .header a.login {
+        margin-right: 10px;
+        color: #0064ff;
+        padding: 3px 10px;
+        font-size: 14px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px #344EFE;
+        border: 1px solid #BAC3FE;
+        text-decoration: none;
+        display: none;
+        font-weight: 700;
+    }
+
+    .header a.login.active {
+        display: block;
+    }
+
+    .header .header_desk {
+        display: none;
+    }
+
+    .header .header_mobile .menu_set {
+        padding: 5px 0px;
+        background-color:transparent;
+        position: relative;
+        z-index: 999;
+    }
+
+    .header .header_mobile .menu_set .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header .header_mobile .btn_menu_mobile {
+        position: relative;
+        transition: 0.5s ease-in-out;
+    }
+
+    .header .header_mobile .btn_menu_mobile .item_menu {
+        position: relative;
+        background-color: black;
+        width: 30px;
+        height: 4px;
+        margin: 5px 0px;
+        border-radius: 15px;
+        transition: 0.5s ease-in-out;
+    }
+
+    .header .header_mobile .btn_menu_mobile.active .item_menu.center {
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+    }
+
+    .header .header_mobile .btn_menu_mobile.active .item_menu.top {
+        transform: translate3d(0px, 9px, 0px) rotate(45deg);
+        transition: 0.5s ease-in-out;
+    }
+
+    .header .header_mobile .btn_menu_mobile.active .item_menu.bottom {
+        transform: translate3d(0px, -9px, 0px) rotate(-45deg);
+        transition: 0.5s ease-in-out;
+    }
+
+    .header .header_mobile .menu_move {
+        background-color: white;
+        width: 100%;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 888;
+        opacity: 0.5;
+        transform: translateX(100%);
+        min-height: 100vh;
+        height: 100vh;
+        transition: 0.8s ease-in-out;
+        padding-top: 15vw;
+    }
+
+    .header .header_mobile .menu_move.login-active {
+        padding: 0px 10px;
+    }
+
+    .header .header_mobile .menu_move b {
+        font-size: 18px;
+    }
+
+    .header .header_mobile .menu_move.active {
+        transform: translateX(0);
+        opacity: 1;
+        transition: 0.5s ease-in-out;
+    }
+
+    .header .header_mobile .menu_move ul {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .header .header_mobile .menu_move ul li .menu-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header .header_mobile .menu_move ul li{
+        list-style: none;
+        margin: 10px auto 30px auto;
+    }
+
+}
+
+/* HEADER END */
+
 .login-page {
     height: 100vh;
     background: #fff;
@@ -406,3 +614,72 @@ img.mob{
     box-shadow: none;
 }
 
+
+/* CSS MAIN */
+
+.main{
+    
+}
+
+.main .list-user{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.detail-user{
+    width: 21%;
+    position: relative;
+    border-radius: 7px;
+    box-shadow: 0px 0px 7px rgb(255, 255, 255);
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    margin: 20px 10px;
+}
+
+.detail-user:hover{
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px rgb(255, 255, 255);
+}
+
+.detail-user .content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 7px 10px;
+    background-color: rgba(0, 0, 0, 0.59);
+    border-radius: 7px;
+}
+
+.detail-user .content *{
+    margin: 0;
+    color: white;
+}
+
+.detail-user .content b{
+    font-size: 17px;
+}
+
+.detail-user .content p{
+    font-size: 15px;
+}
+
+.detail-user .btn_vote{
+    position: absolute;
+    right: 7px;
+    top: 7px;
+}
+
+.detail-user .btn_vote button{
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 3px white;
+    border-radius: 3px;
+    font-size: 13px;
+    padding: 3px 10px;
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+}

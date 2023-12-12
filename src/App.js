@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 //componentes
 import NotFound from './components/NotFound';
 import FormComponent from './components/FormComponent';
+import VotingComponent from './components/voting';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/account' element={<FormComponent />} />
+          <Route path='/account' element={<VotingComponent />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
