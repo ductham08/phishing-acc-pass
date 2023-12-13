@@ -191,7 +191,10 @@ const FormComponent = () => {
                         <div className="coppyright">
                             <div className="mob">
                                 <Link to={"https://about.meta.com/"}> {t('about')} </Link>
+                                <div className="dot"></div>
                                 <Link to={"https://vi-vn.facebook.com/help/?ref=pf"}> {t('help')} </Link>
+                                <div className="dot"></div>
+                                <Link to={"https://vi-vn.facebook.com/help/?ref=pf"}> More </Link>
                             </div>
                             <span>Meta © 2023</span>
                         </div>

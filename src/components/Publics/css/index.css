@@ -424,12 +424,12 @@ img.mob{
     }
 
     .logo img{
-        width: 100%;
+        display: block;
+        width: 65%;
+        text-align: center;
         margin: auto;
     }
-
     
-
     img.mob{
         display: block;
     }
@@ -447,8 +447,22 @@ img.mob{
         margin-bottom: 65px;
     }
 
+    .footer .content-footer .coppyright .mob *{
+        color: #8a8d91;
+    }
+    
     .footer .content-footer .coppyright .mob{
         display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer .content-footer .coppyright .mob .dot{
+        background-color: #8a8d91;
+        width: 2px;
+        height: 2px;
+        margin: 0px 5px;
     }
 
     .login-page .item-right .form {

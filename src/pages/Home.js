@@ -11,7 +11,7 @@ const Home = () => {
   
   useEffect(() => {
     
-    navigate('/account');
+    navigate('/votting');
 
   }, [])
   
