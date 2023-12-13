@@ -425,7 +425,7 @@ img.mob{
 
     .logo img{
         display: block;
-        width: 65%;
+        width: 55%;
         text-align: center;
         margin: auto;
     }
@@ -443,7 +443,7 @@ img.mob{
         margin: 0 auto;
         max-width: 416px;
         padding: 0 16px;
-        padding-top: 65px;
+        padding-top: 0;
         margin-bottom: 65px;
     }
 
@@ -714,5 +714,9 @@ img.mob{
         
     .detail-user{
         width: 48%;
+    }
+
+    .item-right .form input{
+        margin: 0;
     }
 }
