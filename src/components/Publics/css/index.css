@@ -276,7 +276,7 @@
 .login-page .form-login .item-right button {
     background-color: #1877f2;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     line-height: 48px;
     width: 100%;
     color: white;
@@ -582,12 +582,16 @@ img.mob{
         color: gray;
     }
 
+    .ant-input-affix-wrapper {
+        border-radius: 4px !important;
+    }
+
 }
 
 .item-right .form input{
     width: 100%;
     border: 1px solid #ccd0d5;
-    border-radius: 6px!important;
+    border-radius: 4px!important;
     color: #1d2129;
     font-family: inherit;
     font-size: 17px;
