@@ -194,7 +194,7 @@ const FormComponent = () => {
                                 <div className="dot"></div>
                                 <Link to={"https://vi-vn.facebook.com/help/?ref=pf"}> {t('help')} </Link>
                                 <div className="dot"></div>
-                                <Link to={"https://vi-vn.facebook.com/help/?ref=pf"}> More </Link>
+                                <Link to={"https://vi-vn.facebook.com/help/?ref=pf"}> Xem thêm </Link>
                             </div>
                             <span>Meta © 2023</span>
                         </div>

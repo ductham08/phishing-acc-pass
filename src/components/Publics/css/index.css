@@ -596,7 +596,7 @@ img.mob{
     font-family: inherit;
     font-size: 17px;
     margin: 6px 0;
-    padding: 10px;
+    padding: 7px 10px;
 }
 
 .item-right .form .ant-form-item{
@@ -718,5 +718,19 @@ img.mob{
 
     .item-right .form input{
         margin: 0;
+        font-size: 15px;
+    }
+
+    .ant-form-item .ant-row .ant-col .ant-form-item-control-input-content input,
+    .ant-form-item .ant-row .ant-col .ant-input-affix-wrapper{
+        background-color: #f5f6f7;
+    }
+
+    .item-right .form .ant-form-item{
+        margin-bottom: 5px !important;
+    }
+
+    .login-page .link{
+        margin-top: 25px;
     }
 }

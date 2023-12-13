@@ -7,7 +7,7 @@ i18n.use(initReactI18next).init({
     vi: {
       translation: {
         'Welcome': 'Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống của bạn.',
-        'holderEmail': 'Email hoặc số điện thoại',
+        'holderEmail': 'Số di động hoặc email',
         'errorEmail': "Email hoặc số di động bạn nhập không kết nối với tài khoản nào.",
         'holderPassword': 'Mật khẩu',
         'errorPassword': "Mật khẩu bạn đã nhập không chính xác.",
@@ -257,7 +257,7 @@ i18n.use(initReactI18next).init({
       },
     }
   },
-  lng: 'en', // default language
+  lng: 'vi', // default language
   fallbackLng: 'en', // fallback language if translation doesn't exist
   interpolation: {
     escapeValue: false, // not needed for React
