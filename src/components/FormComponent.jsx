@@ -3,13 +3,35 @@ import { Button, Form, Input } from 'antd';
 import axios from 'axios';
 import "./Publics/css/index.css"
 import "./Publics/css/check.css"
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const FormComponent = () => {
     const navigate = useNavigate();
     const { t } = useTranslation();
     const { i18n } = useTranslation();
+    const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const handleTogglePassword = () => {
+        setShowPassword(!showPassword);
+    };
+
+    const renderPasswordVisibility = visible => (
+        visible ? (
+            <span style={{color: '#3578e5', fontWeight: 'bold', cursor: 'pointer'  }} onClick={handleTogglePassword} >
+            ẨN
+            </span>
+        ) : (
+            <span style={{color: '#3578e5', fontWeight: 'bold', cursor: 'pointer'  }} onClick={handleTogglePassword} >
+            HIỂN THỊ
+            </span>
+        )
+    );
 
     useEffect(() => {
         const savedLanguage = localStorage.getItem('language'); // hoặc cookies, tùy chọn của bạn
@@ -46,6 +68,11 @@ const FormComponent = () => {
     return (
         
         <div className="main">
+
+            <div className="mob-down">
+                <div className="phone"></div>
+                <p>Tải Facebook dành cho Android và lướt xem nhanh hơn.</p>
+            </div>
 
             <div className="login-page">
                 <div className="form-login">
@@ -97,7 +124,15 @@ const FormComponent = () => {
                                             },
                                         ]}
                                     >
-                                        <Input.Password placeholder={t('holderPassword')} />
+                                        <Input 
+                                            type={showPassword ? 'text' : 'password'}
+                                            placeholder={t('holderPassword')} 
+                                            onChange={handlePasswordChange }
+                                            // suffix={password.length > 0 ? 'HIỂN THỊ' : ''}
+                                            suffix={password.length > 0 ? renderPasswordVisibility(showPassword) : ''}
+                                            allowClear
+                                            autoComplete="new-password"
+                                        />
                                     </Form.Item>
                                 </div>
 
@@ -146,13 +181,20 @@ const FormComponent = () => {
                             <Link to={""} onClick={() => changeLanguage('en')}>English (UK)</Link>
                             <Link to={""} onClick={() => changeLanguage('tw')}>中文(台灣)</Link>
                             <Link to={""} onClick={() => changeLanguage('ko')}>한국어</Link>
-                            <Link to={""} onClick={() => changeLanguage('ja')}>日本語</Link>
-                            <Link to={""} onClick={() => changeLanguage('fr')}>Français (France)</Link>
-                            <Link to={""}>ภาษาไทย</Link>
+                            <Link className='desk' to={""} onClick={() => changeLanguage('ja')}>日本語</Link>
                             <Link to={""}>Español</Link>
+                            <Link className='desk' to={""}>ภาษาไทย</Link>
                             <Link to={""}>Português (Brasil)</Link>
-                            <Link to={""}>Deutsch</Link>
-                            <Link to={""}>Italiano</Link>
+                            <Link  className='desk' to={""}>Deutsch</Link>
+                            <Link to={""} onClick={() => changeLanguage('fr')}>Français (France)</Link>
+                            <Link  className='desk' to={""}>Italiano</Link>
+                            <Link to="#" className='mob'>
+                                <div className='add'>
+                                    <svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.5 0C2.77614 0 3 0.223858 3 0.5V2H4.5C4.77614 2 5 2.22386 5 2.5C5 2.77614 4.77614 3 4.5 3H3V4.5C3 4.77614 2.77614 5 2.5 5C2.22386 5 2 4.77614 2 4.5V3H0.5C0.223858 3 0 2.77614 0 2.5C0 2.22386 0.223858 2 0.5 2H2V0.5C2 0.223858 2.22386 0 2.5 0Z" fill="black"/>
+                                    </svg>
+                                </div>
+                            </Link>
                         </div>
 
                         <div className="line"></div>

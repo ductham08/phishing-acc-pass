@@ -88,6 +88,14 @@
     display: none;
 }
 
+.ant-input-clear-icon.ant-input-clear-icon-has-suffix{
+    display: none;
+}
+
+.mob-down{
+    display: none;
+}
+
 @media (max-width: 993px) {
     .header .header_mobile {
         display: block;
@@ -438,6 +446,18 @@ img.mob{
         display: none;
     }
 
+    .footer .content-footer .coppyright span{
+        margin-top: 7px;
+    }
+
+    .bob{
+        display: block;
+    }
+
+    .desk{
+        display: none !important;
+    }
+
     .login-page .form-login .content-form {
         flex-direction: column;
         margin: 0 auto;
@@ -479,6 +499,26 @@ img.mob{
         align-items: center;
     }
 
+    .mob .add{
+        border: 1px solid gray;
+        width: 18px;
+        height: 18px;
+        border-radius: 3px;
+        margin: auto;        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mob .add svg{
+        width: 10px;
+        height: 10px;
+    }
+
+    .mob .add svg path{
+        fill: gray
+    }
+
     .login-page .item-right {
         width: 100%;
     }
@@ -508,6 +548,10 @@ img.mob{
         font-size: 14px;
         margin-top: -2px;
         display: block;
+    }
+
+    .footer .content-footer .lang a{
+        color: #576b95;
     }
 
     .login-page .link .signin {
@@ -563,6 +607,7 @@ img.mob{
     .footer .content-footer .footer-top{
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 9px;
         text-align: center;
     }
 
@@ -732,5 +777,33 @@ img.mob{
 
     .login-page .link{
         margin-top: 25px;
+    }
+
+    .mob-down{
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px 8px;
+        background-color: #fffbe2;
+    }
+
+    .mob-down p{
+        color: #3b5998;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0;
+    }
+
+    .mob-down .phone{
+        background-image: url("../images/cvj8rfO8RgU.png");
+        background-size: 19px 67px;
+        background-repeat: no-repeat;
+        width: 19px;
+        height: 33px;
+    }
+    
+    .main .footer{
+        margin-top: 5rem !important;
     }
 }
