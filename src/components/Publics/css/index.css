@@ -1,16 +1,27 @@
 
 /* HEADER START */
-*{
-    font-family: sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+.agency-page *{
+    font-family: 'Roboto Condensed';
+}
+
+.login-form *{
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .agency-page{
+    background-color: rgba(220, 220, 220, 0.63);
+    min-height: 100vh;
+
+    /* 
     background-image: url("https://jobtest.vn/hrblog/wp-content/uploads/2022/07/dai-hoc-kinh-te-quoc-dan-anh-1-1024x643.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: overlay;
-    height: 100vh;
+    */
 }
 
 .header {
@@ -47,6 +58,7 @@
     color: black;
     transition: 0.4s ease-in-out;
     text-decoration: none;
+    font-weight: 700;
 }
 
 .header ul li.active a {
@@ -681,10 +693,6 @@ img.mob{
 
 /* CSS MAIN */
 
-.main{
-    
-}
-
 .main .list-user{
     display: flex;
     align-items: flex-start;
@@ -700,7 +708,9 @@ img.mob{
     overflow: hidden;
     transition: 0.3s ease-in-out;
     cursor: pointer;
-    margin: 20px 10px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .detail-user:hover{
@@ -755,10 +765,18 @@ img.mob{
     }
 }
 
+.mob .add{
+    display: none;
+}
+
 @media (max-width: 767px) {
+    
+    .mob .add{
+        display: block;
+    }
         
     .detail-user{
-        width: 48%;
+        width: 45%;
     }
 
     .item-right .form input{
