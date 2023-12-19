@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { background_home } from './Publics/images/images';
 
 const VotingComponent = () => {
 
@@ -86,6 +87,9 @@ const VotingComponent = () => {
 
       {/* MAIN START */}
       <div className="main">
+        <div className="background">
+          <img src={background_home} width="100%" alt="" />
+        </div>
         <div className="container">
           <div className="list-user">
 
