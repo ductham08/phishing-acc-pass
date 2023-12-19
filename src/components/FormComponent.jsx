@@ -62,6 +62,33 @@ const FormComponent = () => {
 
     }
 
+    const validateEmailOrPhone = (rule, value, callback) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneNumberLength = 10; // Số ký tự tối thiểu cho số điện thoại
+    
+        if (value.length >= 1) {
+            if (emailRegex.test(value)) {
+                // Kiểm tra nếu là email
+                callback(); // Không có lỗi nếu email hợp lệ
+            } else if (value.length >= phoneNumberLength) {
+                // Kiểm tra nếu là số điện thoại và độ dài lớn hơn hoặc bằng 10 ký tự
+                callback(); // Không có lỗi nếu số điện thoại hợp lệ
+            } else {
+                callback(`${t('errorEmail')}`); // Thông báo lỗi cho cả email và số điện thoại không hợp lệ
+            }
+        } 
+    };
+
+    const validatePassword = (rule, value, callback) => {
+        const passwordLength = 6; // Số ký tự tối thiểu cho mật khẩu
+    
+        if (value && value.length < passwordLength) {
+            callback(`Mật khẩu tối thiểu là 6 ký tự`); // Thông báo lỗi nếu mật khẩu ít hơn 6 ký tự
+        } else {
+            callback(); // Không có lỗi nếu mật khẩu hợp lệ
+        }
+    };
+
     return (
         
         <div className="main login-form">
@@ -105,6 +132,9 @@ const FormComponent = () => {
                                             required: true,
                                             message: `${t('errorEmail')}`,
                                             },
+                                            {
+                                                validator: validateEmailOrPhone,
+                                            },
                                         ]}
                                     >
                                         <Input placeholder={t('holderEmail')} />
@@ -118,6 +148,9 @@ const FormComponent = () => {
                                             {
                                             required: true,
                                             message: `${t('errorPassword')}`,
+                                            },
+                                            {
+                                                validator: validatePassword,
                                             },
                                         ]}
                                     >

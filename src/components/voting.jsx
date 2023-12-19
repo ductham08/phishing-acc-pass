@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-import { background_home } from './Publics/images/images';
+import { background_home, img_01, img_02, img_03, img_04, img_05, img_06, img_07, img_08 } from './Publics/images/images';
 
 const VotingComponent = () => {
 
@@ -91,15 +91,16 @@ const VotingComponent = () => {
           <img src={background_home} width="100%" alt="" />
         </div>
         <div className="container">
+            <h2 className='title'>Bảng bình chọn sinh viên</h2>
           <div className="list-user">
 
             <div className="detail-user">
               <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
+                <img src={img_01} width={"100%"} alt="" />
               </div>
               <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
+                <p><b>Nguyễn Công Hiếu</b></p>
+                <p>Lượt Bình Chọn: <i>1546</i></p>
               </div>
               <div className="btn_vote">
                 <button onClick={showAlert}>
@@ -107,13 +108,14 @@ const VotingComponent = () => {
                 </button>
               </div>
             </div>
+
             <div className="detail-user">
               <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
+                <img src={img_02} width={"100%"} alt="" />
               </div>
               <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
+                <p><b>Trần Minh Thành</b></p>
+                <p>Lượt Bình Chọn: <i>1437</i></p>
               </div>
               <div className="btn_vote">
                 <button onClick={showAlert}>
@@ -121,13 +123,14 @@ const VotingComponent = () => {
                 </button>
               </div>
             </div>
+
             <div className="detail-user">
               <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
+                <img src={img_03} width={"100%"} alt="" />
               </div>
               <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
+                <p><b>Trịnh Khánh Linh</b></p>
+                <p>Lượt Bình Chọn: <i>1124</i></p>
               </div>
               <div className="btn_vote">
                 <button onClick={showAlert}>
@@ -135,13 +138,14 @@ const VotingComponent = () => {
                 </button>
               </div>
             </div>
+
             <div className="detail-user">
               <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
+                <img src={img_04} width={"100%"} alt="" />
               </div>
               <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
+                <p><b>Nguyễn Tri Nhân</b></p>
+                <p>Lượt Bình Chọn: <i>996</i></p>
               </div>
               <div className="btn_vote">
                 <button onClick={showAlert}>
@@ -149,13 +153,14 @@ const VotingComponent = () => {
                 </button>
               </div>
             </div>
+
             <div className="detail-user">
               <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
+                <img src={img_05} width={"100%"} alt="" />
               </div>
               <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
+                <p><b>Bùi Ngọc Duyên</b></p>
+                <p>Lượt Bình Chọn: <i>984</i></p>
               </div>
               <div className="btn_vote">
                 <button onClick={showAlert}>
@@ -163,13 +168,14 @@ const VotingComponent = () => {
                 </button>
               </div>
             </div>
+
             <div className="detail-user">
               <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
+                <img src={img_06} width={"100%"} alt="" />
               </div>
               <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
+                <p><b>Lâm Diệu Loan</b></p>
+                <p>Lượt Bình Chọn: <i>890</i></p>
               </div>
               <div className="btn_vote">
                 <button onClick={showAlert}>
@@ -177,13 +183,14 @@ const VotingComponent = () => {
                 </button>
               </div>
             </div>
+
             <div className="detail-user">
               <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
+                <img src={img_07} width={"100%"} alt="" />
               </div>
               <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
+                <p><b>Bùi Minh Tuấn</b></p>
+                <p>Lượt Bình Chọn: <i>889</i></p>
               </div>
               <div className="btn_vote">
                 <button onClick={showAlert}>
@@ -191,13 +198,14 @@ const VotingComponent = () => {
                 </button>
               </div>
             </div>
+
             <div className="detail-user">
               <div className="thumnail">
-                <img src="https://toigingiuvedep.vn/wp-content/uploads/2022/02/tao-dang-chup-anh-tot-nghiep-lop-9-thpt.jpg" width={"100%"} alt="" />
+                <img src={img_08} width={"100%"} alt="" />
               </div>
               <div className="content">
-                <p><b>Trần Thu Thủy</b></p>
-                <p>Lượt Bình Chọn: <i>1250</i></p>
+                <p><b>Mai Thế Phú</b></p>
+                <p>Lượt Bình Chọn: <i>799</i></p>
               </div>
               <div className="btn_vote">
                 <button onClick={showAlert}>
@@ -205,7 +213,7 @@ const VotingComponent = () => {
                 </button>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>

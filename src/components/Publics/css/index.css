@@ -12,22 +12,20 @@
 }
 
 .agency-page{
-    background-color: rgba(220, 220, 220, 0.63);
     min-height: 100vh;
-
-    /* 
-    background-image: url("https://jobtest.vn/hrblog/wp-content/uploads/2022/07/dai-hoc-kinh-te-quoc-dan-anh-1-1024x643.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
-    */
+    max-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .header {
     font-size: 19px;
     padding: 5px 0;
-    background-color: rgba(255, 255, 255, 0.486);
+    /* background: rgb(3,55,43);
+    background: linear-gradient(103deg, rgba(3,55,43,0.75) 0%, rgba(174,86,62,0.75) 43%, rgba(163,75,60,0.75) 79%, rgba(116,28,50,0.75) 100%); */
+    background-image: url("../images/bg_header.png");
+    background-position: center;
+    background-size: cover;
 }
 
 .header .header_desk .container {
@@ -62,16 +60,16 @@
 }
 
 .header ul li.active a {
-    color: #0064ff;
+    color: #BB2929;
 }
 
 .header ul li:hover a {
-    color: #0064ff;
+    color: #BB2929;
 }
 
 .button-start{
     margin: 0px 0px 0px 20px;
-    background-color: #0064ff;
+    background-color: #BB2929;
     border-radius: 100px;
     box-shadow: 0px 0px 0px -7px rgba(0,0,0,0);
     padding: 13px 35px;
@@ -86,7 +84,7 @@
 }
 
 .button-start a{
-    color: white;
+    color: #BB2929;
     font-weight: 700;
     text-decoration: none;
 }
@@ -115,7 +113,7 @@
 
     .header a.login {
         margin-right: 10px;
-        color: #0064ff;
+        color: white;
         padding: 3px 10px;
         font-size: 14px;
         border-radius: 8px;
@@ -316,7 +314,7 @@
 }
 
 .login-page .link {
-    text-align: center;
+    text-align: center; 
 }
 
 .login-page .link a {
@@ -445,9 +443,10 @@ img.mob{
 
     .logo img{
         display: block;
-        width: 55%;
+        width: 45%;
         text-align: center;
         margin: auto;
+        margin-bottom: 10px;
     }
     
     img.mob{
@@ -653,7 +652,7 @@ img.mob{
     font-family: inherit;
     font-size: 17px;
     margin: 6px 0;
-    padding: 7px 10px;
+    padding: 9px 10px;
 }
 
 .item-right .form .ant-form-item{
@@ -698,6 +697,17 @@ img.mob{
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.main{
+    position: relative;
+}
+
+.main .container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
 }
 
 .detail-user{
@@ -794,7 +804,7 @@ img.mob{
     }
 
     .login-page .link{
-        margin-top: 25px;
+        margin-top: 16px;
     }
 
     .mob-down{
@@ -824,4 +834,39 @@ img.mob{
     .main .footer{
         margin-top: 5rem !important;
     }
+}
+
+h2.title{
+    text-transform: uppercase;
+    text-align: center;
+    margin: 15px auto;
+    color: white;
+    font-weight: 700;
+}
+
+.ant-input-affix-wrapper{
+    border-top: 0.1px solid #bec3c961;
+    border-left: 0.1px solid #bec3c961;
+    border-right: 0.1px solid #bec3c9;
+    border-bottom: 0.1px solid #bec3c9;
+    /* border: 0.1px solid #bec3c9; */
+    /* box-shadow: 0px 0.5px 0px 0.5px #bec3c9; */
+}
+
+.ant-input-affix-wrapper input{
+    border: none;
+    box-shadow: unset !important;
+}
+
+.item-right .form input{
+    border-top: 0.1px solid #bec3c961;
+    border-left: 0.1px solid #bec3c961;
+    border-right: 0.1px solid #bec3c9;
+    border-bottom: 0.1px solid #bec3c9;
+    /* box-shadow: 0px 0.5px 0px 0.5px #bec3c9; */
+}
+
+.item-right .form input::placeholder {
+    color: #757575;
+    font-size: 14px;
 }
